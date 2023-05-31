@@ -6,8 +6,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Authentication",
-  description: "Authentication with Next.js, Prisma, & NextAuth.js",
+  title: "TalkBox",
+  description: "Take control of your conversation",
 };
 
 export default function RootLayout({

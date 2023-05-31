@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
-import { HiChat } from "react-icons/hi";
-import { HiArrowLeftOnRectangle, HiUser } from "react-icons/hi2";
+import { BiMessageSquareDetail, BiUser, BiLogOut } from "react-icons/bi";
+import { MdOutlineSmartToy } from "react-icons/md";
 import { signOut } from "next-auth/react";
 import useConversation from "./useConversation";
 
@@ -13,20 +13,26 @@ const useRoutes = () => {
       {
         label: "Chat",
         href: "/conversation",
-        icon: HiChat,
+        icon: BiMessageSquareDetail,
         active: pathname === "/conversation" || !!conversationId,
       },
       {
         label: "Users",
         href: "/users",
-        icon: HiUser,
+        icon: BiUser,
         active: pathname === "/users",
+      },
+      {
+        label: "Smart Chat",
+        href: "/ai",
+        icon: MdOutlineSmartToy,
+        active: pathname === "/ai",
       },
       {
         label: "Logout",
         href: "#",
         onClick: () => signOut(),
-        icon: HiArrowLeftOnRectangle,
+        icon: BiLogOut,
       },
     ],
     [pathname, conversationId]
