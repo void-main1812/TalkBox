@@ -7,7 +7,6 @@ const useOtherUser = (
   conversation: FullConversationType | { users: User[] }
 ) => {
   const session = useSession();
-  console.log(conversation);
 
   const otherUser = useMemo(() => {
     const currentUserEmail = session.data?.user?.email;
