@@ -6,6 +6,7 @@ import React from "react";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
 import { HiPaperAirplane, HiPhoto } from "react-icons/hi2";
 import MessageInput from "./MessageInput";
+import { CldUploadButton } from "next-cloudinary";
 
 const Form = () => {
   const { conversationId } = useConversation();
@@ -24,6 +25,14 @@ const Form = () => {
     setValue("message", "", { shouldValidate: true });
     axios.post("/api/messages", { ...data, conversationId });
   };
+
+  const handleUpload = (result: any) => {
+    axios.post("/api/messages", {
+      image: result?.info?.secure_url,
+      conversationId,
+    });
+  };
+
   return (
     <div
       className="
@@ -37,7 +46,13 @@ const Form = () => {
   lg:gap-4
   "
     >
-      <HiPhoto size={25} className="text-gray-500" />
+      <CldUploadButton
+        options={{ maxFiles: 1 }}
+        onUpload={handleUpload}
+        uploadPreset="sdft7qq6"
+      >
+        <HiPhoto size={25} className="text-gray-500" />
+      </CldUploadButton>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex items-center gap-2 lg:gap-4 w-full"
