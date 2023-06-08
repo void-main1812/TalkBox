@@ -43,6 +43,8 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
         flex
         h-12
         w-12
+        mt-4
+        sm:mt-0
         flex-shrink-0
         items-center
         justify-center
@@ -89,6 +91,8 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
       sm:mt-4
       sm:flex
       sm:flex-row-reverse
+      flex
+      flex-row-reverse
       gap-4
       "
       >
