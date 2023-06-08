@@ -32,9 +32,9 @@ const Button: React.FC<ButtonProps> = ({
     flex justify-center rounded-md px-3 py-3 text-md font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`,
         disabled && "opacity-50 cursor-default",
         fullWidth && "w-full",
-        secondary ? "text-gray-900" : "text-white",
+        secondary ? "text-gray-900 hover:bg-gray-200 " : "text-white",
         danger &&
-          "bg-rose-500 hover:bg-rose-700 focus-visible:outline-rose-900",
+          "from-rose-700 to-rose-500 shadow-xl shadow-rose-300 hover:shadow-none transition duration-100 bg-gradient-to-t hover:bg-rose-700 focus-visible:outline-rose-900",
         !secondary &&
           !danger &&
           "from-gray-900 to-gray-700 bg-gradient-to-t shadow-xl shadow-gray-300 hover:shadow-transparent -translate-y-1 transition-all duration-75 hover:translate-y-0"

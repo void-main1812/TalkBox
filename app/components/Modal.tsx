@@ -27,14 +27,23 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             className="
             fixed
             inset-0
-            bg-gray-500
+            bg-gray-200
             transition-opacity
-            bg-opacity-75
+            bg-opacity-50
+            backdrop-blur-md
             "
           />
         </Transition.Child>
         <div
           className="
+        fixed
+        inset-0
+        z-10
+        overflow-y-auto
+        "
+        >
+          <div
+            className="
         flex
         min-h-full
         items-center
@@ -43,18 +52,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         text-center
         sm:p-0
         "
-        >
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            enterTo="opacity-100 translate-y-0 sm:scale-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-            leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <Dialog.Panel
-              className="
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            >
+              <Dialog.Panel
+                className="
             relative
             transform
             overflow-hidden
@@ -63,7 +72,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             px-4
             pb-4
             text-left
-            shadow-xsl
+            shadow-2xl
             transition-all
             w-full
             sm:my-8
@@ -71,9 +80,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             sm:max-w-lg
             sm:p-6
             "
-            >
-              <div
-                className="
+              >
+                <div
+                  className="
                 absolute
                 right-0
                 top-0
@@ -83,10 +92,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 sm:block
                 z-10
                 "
-              >
-                <button
-                  type="button"
-                  className="
+                >
+                  <button
+                    type="button"
+                    className="
                 rounded-md
                 bg-white
                 text-gray-400
@@ -96,15 +105,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 focus:ring-gray-500
                 focus:ring-offset-2
                 "
-                  onClick={onClose}
-                >
-                  <span className="sr-only">Close</span>
-                  <IoClose className="h-6 w-6" />
-                </button>
-              </div>
-              {children}
-            </Dialog.Panel>
-          </Transition.Child>
+                    onClick={onClose}
+                  >
+                    <span className="sr-only">Close</span>
+                    <IoClose className="h-6 w-6" />
+                  </button>
+                </div>
+                {children}
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
         </div>
       </Dialog>
     </Transition.Root>
