@@ -59,7 +59,8 @@ export const Input: React.FC<InputProps> = ({
           focus:ring-gray-500
           sm:text-sm
           sm:leading-6
-          px-2`,
+          px-2
+          mb-4`,
             errors[id] && "focus:ring-rose-500",
             disabled && "opacity-50 cursor-default"
           )}
