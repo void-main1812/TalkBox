@@ -47,11 +47,15 @@ export const Input: React.FC<InputProps> = ({
           block
           w-full
           rounded-md
-          border-0
           py-2
           text-gray-900
           sm:bg-gray-100
           bg-white
+          shadow-xl
+          sm:shadow-none
+          border-gray-300
+          border-[1px]
+          sm:border-0
           focus:outline-none
           placeholder:text-gray-400
           focus:ring-2
