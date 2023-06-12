@@ -15,7 +15,7 @@ export default function Home() {
           width="48"
         />
         <h1 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 selection:bg-gray-300">
-          Welcome to App
+          Welcome to TalkBox
         </h1>
         <AuthForm />
       </div>
